@@ -8,6 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rosas_check
+
     steps:
       - uses: actions/checkout@v4
 
@@ -28,5 +32,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: rosas-check-apk
-          path: build/app/outputs/flutter-apk/*.apk
+          path: rosas_check/build/app/outputs/flutter-apk/*.apk
           retention-days: 30
